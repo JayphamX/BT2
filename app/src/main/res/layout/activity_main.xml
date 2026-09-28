@@ -7,51 +7,65 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <!-- Guideline ngang chia hàng -->
+    <!-- Các mốc ngang -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideH1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.17" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideH2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.32" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideH3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.66" />
+        app:layout_constraintGuide_percent="0.53" />
 
-    <!-- Guideline dọc chia cột -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <!-- Các mốc dọc: cụm giao diện chiếm khoảng 2/3 màn hình -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideV1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.17" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideV2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.333" />
+        app:layout_constraintGuide_percent="0.34" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideV3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.666" />
+        app:layout_constraintGuide_percent="0.51" />
 
-    <!-- Ô 1 -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideV4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+    <!-- Ô 1: nằm ngang, cùng chiều rộng với 2 và 6 -->
     <TextView
         android:id="@+id/box1"
         android:layout_width="0dp"
@@ -60,14 +74,14 @@
         android:gravity="center"
         android:text="@string/box_1"
         android:textColor="@android:color/white"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideH1"
+        app:layout_constraintBottom_toBottomOf="@id/guideH1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guideV1" />
+        app:layout_constraintEnd_toEndOf="@id/guideV4" />
 
-    <!-- Ô 2 -->
+    <!-- Ô 2: nằm ngang -->
     <TextView
         android:id="@+id/box2"
         android:layout_width="0dp"
@@ -76,12 +90,12 @@
         android:gravity="center"
         android:text="@string/box_2"
         android:textColor="@android:color/white"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideH1"
-        app:layout_constraintStart_toEndOf="@id/guideV1"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/guideH2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideH1" />
 
     <!-- Ô 3 -->
     <TextView
@@ -92,12 +106,12 @@
         android:gravity="center"
         android:text="@string/box_3"
         android:textColor="@android:color/black"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/guideH1"
-        app:layout_constraintBottom_toTopOf="@id/guideH2"
+        app:layout_constraintTop_toBottomOf="@id/guideH2"
+        app:layout_constraintBottom_toBottomOf="@id/guideH3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guideV2" />
+        app:layout_constraintEnd_toEndOf="@id/guideV1" />
 
     <!-- Ô 4 -->
     <TextView
@@ -108,14 +122,17 @@
         android:gravity="center"
         android:text="@string/box_4"
         android:textColor="@android:color/white"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/guideH1"
-        app:layout_constraintBottom_toTopOf="@id/guideH2"
-        app:layout_constraintStart_toEndOf="@id/guideV2"
-        app:layout_constraintEnd_toStartOf="@id/guideV3" />
+        app:layout_constraintTop_toBottomOf="@id/guideH2"
+        app:layout_constraintBottom_toBottomOf="@id/guideH3"
+        app:layout_constraintStart_toEndOf="@id/guideV1"
+        app:layout_constraintEnd_toEndOf="@id/guideV2" />
 
     <!-- Ô 5 -->
+
+    <!-- Ô 6: nằm ngang và cùng chiều rộng với 1, 2 -->
+
     <TextView
         android:id="@+id/box5"
         android:layout_width="0dp"
@@ -124,30 +141,31 @@
         android:gravity="center"
         android:text="@string/box_5"
         android:textColor="@android:color/white"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/guideH1"
-        app:layout_constraintBottom_toTopOf="@id/guideH2"
-        app:layout_constraintStart_toEndOf="@id/guideV3"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/guideH3"
+        app:layout_constraintEnd_toEndOf="@id/guideV3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/guideV2"
+        app:layout_constraintTop_toBottomOf="@id/guideH2"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- Ô 6: full chiều ngang -->
     <TextView
         android:id="@+id/box6"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#FF5722"
+        android:background="#FF7514"
         android:gravity="center"
         android:text="@string/box_6"
         android:textColor="@android:color/white"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/guideH2"
-        app:layout_constraintBottom_toTopOf="@id/guideH3"
+        app:layout_constraintBottom_toBottomOf="@id/guideH4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/guideH3" />
 
-    <!-- Dòng Họ và tên - MSSV -->
+    <!-- Họ và tên - MSSV -->
     <TextView
         android:id="@+id/tvInfo"
         android:layout_width="0dp"
